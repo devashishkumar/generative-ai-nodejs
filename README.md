@@ -12,5 +12,3 @@ OPENAI_API_KEY=your api key
 4. Install nodemon package in your machine using command 'npm install -g nodemon'.
 5. Execute command 'nodemon start' in your application root location.
 ```
-
-### Add Open AI LangChain code example ?
