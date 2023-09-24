@@ -1,0 +1,32 @@
+<router-outlet></router-outlet>
+
+
+
+
+
+<div class="container" style="width:700px;">
+  <form #formObj="ngForm" [hidden]="loading">
+    <h6>Search Criteria</h6>
+    <div class="form-floating">
+      <input type="text" id="searchCriteria" name="searchCriteria" class="form-control"
+        placeholder="Define Your Search Criteria" ngModel>
+      <label for="searchCriteria" class="text-success">
+        Search Criteria</label>
+    </div>
+    <div class="form-floating pt-2">
+      <input type="submit" value="submit" class="btn btn-primary" (click)="onClick(formObj.value)">
+    </div>
+  </form>
+</div>
+
+
+
+
+<div [hidden]="!loading" class="spinner-border text-primary" role="status">
+  <span class="sr-only" [hidden]="!loading"></span>
+</div>
+
+<div [hidden]="loading"
+  *ngIf="langChainData && langChainData.data && langChainData.data.choices && langChainData.data.choices.length">
+  <span *ngFor="let d of langChainData.data.choices" [innerHtml]="d.text"></span>
+</div>
