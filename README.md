@@ -17,6 +17,6 @@ OPENAI_API_KEY=your api key
 
 ```sh
 1. Create an Angular app to fetch data through UI.
-2. Execute command 'npm install' in langchain-angular-app directory.
+2. Execute command 'npm install' in openai-angular-app directory.
 3. Now Execute command 'ng serve' and access angular app in (http://localhost:4200).
 ```
