@@ -22,4 +22,5 @@ OPENAI_API_KEY=your api key
 ```
 
 ### Open AI Angular Application UI
+
 ![openaiui](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/7a9724ac-663e-4d61-82a9-e40373ea8f81)
