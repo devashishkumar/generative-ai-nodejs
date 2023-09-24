@@ -9,10 +9,8 @@ router.get('/', function (req, res, next) {
 router.get('/getSearchCriteria/:criteria', async function (req, res, next) {
   try {
     const classObj = new OpenAiClass();
-    console.log(req.params, '11');
     const langChainData = await classObj.generateText(req.params.criteria);
     if (langChainData) {
-      console.log(langChainData);
       res.json({ data: langChainData });
     }
   } catch (e) {
