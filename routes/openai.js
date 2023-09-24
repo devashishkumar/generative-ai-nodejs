@@ -3,7 +3,7 @@ const OpenAI = require("openai");
 require("dotenv").config();
 var router = express.Router();
 
-/* GET home page. */
+/* GET open ai module home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
