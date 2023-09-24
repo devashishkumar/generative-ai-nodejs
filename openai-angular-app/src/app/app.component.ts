@@ -13,12 +13,9 @@ export class AppComponent implements OnInit {
   formObj: any = {};
   langChainData: any = {};
 
-  constructor(private generativeAiServiceObj: GenerativeAiService) {
-
-  }
+  constructor(private generativeAiServiceObj: GenerativeAiService) {}
 
   ngOnInit(): void {
-
   }
 
   /**
@@ -41,6 +38,5 @@ export class AppComponent implements OnInit {
     }, error => {
       this.loading = false;
     });
-
   }
 }

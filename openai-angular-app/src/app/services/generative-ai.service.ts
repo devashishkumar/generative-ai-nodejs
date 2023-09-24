@@ -9,7 +9,6 @@ export class GenerativeAiService {
 
   serviceUrl = 'http://localhost:3000/openai/';
 
-
   constructor(private httpClientObj: HttpClient) { }
 
   getLangChainDataBySearchCriteria(searchCriteria: string): Observable<any> {
