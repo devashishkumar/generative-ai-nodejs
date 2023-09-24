@@ -1,4 +1,6 @@
 var express = require('express');
+const OpenAI = require("openai");
+require("dotenv").config();
 var router = express.Router();
 
 /* GET home page. */
@@ -19,9 +21,6 @@ router.get('/getSearchCriteria/:criteria', async function (req, res, next) {
 });
 
 module.exports = router;
-
-const OpenAI = require("openai");
-require("dotenv").config();
 
 class OpenAiClass {
   openai;
