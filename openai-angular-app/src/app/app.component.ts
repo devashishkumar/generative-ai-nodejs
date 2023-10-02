@@ -47,7 +47,6 @@ export class AppComponent implements OnInit {
    * @param data search criteria entered by user
    */
   getImage(data) {
-    window.console.log(data);
     this.imageLoading = true;
     this.generativeAiServiceObj.getImage(data.image).subscribe(response => {
       this.imageLoading = false;
