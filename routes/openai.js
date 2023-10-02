@@ -17,6 +17,22 @@ router.get('/getSearchCriteria/:criteria', async function (req, res, next) {
     }
   } catch (e) {
     console.log(e);
+    res.json({ data: "Error Found" });
+  }
+});
+
+router.get('/searchImage/:criteria', async function (req, res, next) {
+  try {
+    const classObj = new OpenAiClass();
+    console.log(req.params);
+    const image = await classObj.generateImage(req.params.criteria);
+    if (image) {
+      res.json({ data: image });
+    }
+
+  } catch (e) {
+    console.log(e);
+    res.json({ data: "Error Found" });
   }
 });
 
@@ -29,6 +45,11 @@ class OpenAiClass {
       apiKey: process.env.OPENAI_API_KEY
     });
   }
+
+  /**
+   * generate description
+   * @param text search text
+   */
   async generateText(text) {
     const response = await this.openai.completions.create({
       model: "text-davinci-003",
@@ -48,6 +69,11 @@ class OpenAiClass {
     });
     console.log(response.choices);
   }
+
+  /**
+   * generate stream
+   * @param text search text
+   */
   async streamResponses(text) {
     const stream = await this.openai.chat.completions.create({
       model: "gpt-3.5-turbo",
@@ -57,5 +83,13 @@ class OpenAiClass {
     for await (const part of stream) {
       process.stdout.write(part.choices[0]?.delta?.content || "");
     }
+  }
+
+  /**
+   * generate image
+   * @param text search text
+   */
+  async generateImage(text) {
+    return await this.openai.images.generate({ prompt: text });
   }
 }

@@ -1,9 +1,6 @@
 <router-outlet></router-outlet>
 
 
-
-
-
 <div class="container" style="width:700px;">
   <form #formObj="ngForm" [hidden]="loading">
     <h6>Search Criteria</h6>
@@ -29,4 +26,35 @@
 <div [hidden]="loading"
   *ngIf="langChainData && langChainData.data && langChainData.data.choices && langChainData.data.choices.length">
   <span *ngFor="let d of langChainData.data.choices" [innerHtml]="d.text"></span>
+</div>
+
+
+
+<div class="container" style="width:700px;">
+
+  <h2>Generate Image</h2>
+  <form #imageForm="ngForm" [hidden]="imageLoading">
+    <h6>Search Image Criteria</h6>
+    <div class="form-floating">
+      <input type="text" id="image" name="image" class="form-control"
+        placeholder="Define Your Search Criteria" ngModel>
+      <label for="image" class="text-success">
+        Search Image Criteria</label>
+    </div>
+    <div class="form-floating pt-2">
+      <input type="submit" value="submit" class="btn btn-primary" (click)="getImage(imageForm.value)">
+    </div>
+  </form>
+</div>
+
+
+
+
+<div [hidden]="!imageLoading" class="spinner-border text-primary" role="status">
+  <span class="sr-only" [hidden]="!imageLoading"></span>
+</div>
+
+<div [hidden]="imageLoading"
+  *ngIf="openAiImageData && openAiImageData.data && openAiImageData.data.data && openAiImageData.data.data.length">
+  <span *ngFor="let d of openAiImageData.data.data"> <img [src]="d.url" width="500" height="500"/> </span>
 </div>

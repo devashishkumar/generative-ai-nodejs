@@ -10,8 +10,10 @@ import { GenerativeAiService } from './services/generative-ai.service';
 export class AppComponent implements OnInit {
   title = 'openai-angular-app';
   loading = false;
+  imageLoading = false;
   formObj: any = {};
   langChainData: any = {};
+  openAiImageData: any = {};
 
   constructor(private generativeAiServiceObj: GenerativeAiService) {}
 
@@ -37,6 +39,21 @@ export class AppComponent implements OnInit {
       this.langChainData = response;
     }, error => {
       this.loading = false;
+    });
+  }
+
+  /**
+   * service call to get data as per user entered data
+   * @param data search criteria entered by user
+   */
+  getImage(data) {
+    window.console.log(data);
+    this.imageLoading = true;
+    this.generativeAiServiceObj.getImage(data.image).subscribe(response => {
+      this.imageLoading = false;
+      this.openAiImageData = response;
+    }, error => {
+      this.imageLoading = false;
     });
   }
 }
