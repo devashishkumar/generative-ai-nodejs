@@ -28,4 +28,4 @@ OPENAI_API_KEY=your api key
 
 ### Genrate Image
 
-![openai-imagegeneration](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/3f1b60a9-44fd-4ec1-a888-dc5a075f1d05)
+![openai-imagegeneration](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/ca66d8c7-c79a-4d39-8717-523d69a242dd)
