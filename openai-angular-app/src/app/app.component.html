@@ -14,25 +14,21 @@
       <input type="submit" value="submit" class="btn btn-primary" (click)="onClick(formObj.value)">
     </div>
   </form>
-</div>
 
-
-
-
-<div [hidden]="!loading" class="spinner-border text-primary" role="status">
-  <span class="sr-only" [hidden]="!loading"></span>
-</div>
-
-<div [hidden]="loading"
-  *ngIf="langChainData && langChainData.data && langChainData.data.choices && langChainData.data.choices.length">
-  <span *ngFor="let d of langChainData.data.choices" [innerHtml]="d.text"></span>
+  <div [hidden]="!loading" class="spinner-border text-primary" role="status">
+    <span class="sr-only" [hidden]="!loading"></span>
+  </div>
+  
+  <div class="pt-4" [hidden]="loading"
+    *ngIf="langChainData && langChainData.data && langChainData.data.choices && langChainData.data.choices.length">
+    <span *ngFor="let d of langChainData.data.choices" [innerHtml]="d.text"></span>
+  </div>
 </div>
 
 
 
 <div class="container" style="width:700px;">
 
-  <h2>Generate Image</h2>
   <form #imageForm="ngForm" [hidden]="imageLoading">
     <h6>Search Image Criteria</h6>
     <div class="form-floating">
@@ -45,16 +41,14 @@
       <input type="submit" value="submit" class="btn btn-primary" (click)="getImage(imageForm.value)">
     </div>
   </form>
-</div>
 
-
-
-
-<div [hidden]="!imageLoading" class="spinner-border text-primary" role="status">
-  <span class="sr-only" [hidden]="!imageLoading"></span>
-</div>
-
-<div [hidden]="imageLoading"
-  *ngIf="openAiImageData && openAiImageData.data && openAiImageData.data.data && openAiImageData.data.data.length">
-  <span *ngFor="let d of openAiImageData.data.data"> <img [src]="d.url" width="500" height="500"/> </span>
+  <div [hidden]="!imageLoading" class="spinner-border text-primary" role="status">
+    <span class="sr-only" [hidden]="!imageLoading"></span>
+  </div>
+  
+  <div class="pt-2" [hidden]="imageLoading"
+    *ngIf="openAiImageData && openAiImageData.data && openAiImageData.data.data && openAiImageData.data.data.length">
+    <span *ngFor="let d of openAiImageData.data.data"> <img [src]="d.url" width="500" height="500"/> </span>
+  </div>
+  <div class="pt-2"></div>
 </div>

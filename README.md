@@ -24,8 +24,8 @@ OPENAI_API_KEY=your api key
 
 ### Open AI Angular Application UI
 
-![openaiui](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/7a9724ac-663e-4d61-82a9-e40373ea8f81)
+![openaiui](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/bc9c3d93-daa1-42bf-9367-49b77b952275)
 
 ### Genrate Image
 
-![openai-imagegeneration](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/ca66d8c7-c79a-4d39-8717-523d69a242dd)
+![openai-imagegeneration2](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/f71f92e7-9b4c-48b3-9fe8-aa7bc8cc9bc9)
