@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
    */
   getLangChainData(data) {
     this.loading = true;
-    this.generativeAiServiceObj.getLangChainDataBySearchCriteria(data.searchCriteria).subscribe(response => {
+    this.generativeAiServiceObj.getLangChainDataBySearchCriteria(data).subscribe(response => {
       this.loading = false;
       this.langChainData = response;
     }, error => {

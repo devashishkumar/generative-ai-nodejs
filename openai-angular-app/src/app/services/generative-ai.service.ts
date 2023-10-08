@@ -16,8 +16,8 @@ export class GenerativeAiService {
    * @param searchCriteria text
    * @returns 
    */
-  getLangChainDataBySearchCriteria(searchCriteria: string): Observable<any> {
-    return this.httpClientObj.get<any>(`${this.serviceUrl}getSearchCriteria/${searchCriteria}`);
+  getLangChainDataBySearchCriteria(searchCriteria): Observable<any> {
+    return this.httpClientObj.post(`${this.serviceUrl}getSearchCriteria`, searchCriteria);
   }
 
   /**

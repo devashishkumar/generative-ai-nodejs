@@ -8,10 +8,10 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/getSearchCriteria/:criteria', async function (req, res, next) {
+router.post('/getSearchCriteria', async function (req, res, next) {
   try {
     const classObj = new OpenAiClass();
-    const langChainData = await classObj.generateText(req.params.criteria);
+    const langChainData = await classObj.generateText(req.body.searchCriteria);
     if (langChainData) {
       res.json({ data: langChainData });
     }
@@ -50,7 +50,7 @@ class OpenAiClass {
     const response = await this.openai.completions.create({
       model: "text-davinci-003",
       prompt: text,
-      temperature: 1,
+      temperature: 0,
       max_tokens: 256,
       top_p: 1,
       frequency_penalty: 0,
