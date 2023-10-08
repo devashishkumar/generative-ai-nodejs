@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component } from '@angular/core';
 import { GenerativeAiService } from '../services/generative-ai.service';
 
@@ -15,9 +17,6 @@ export class OpenaiComponent {
   openAiImageData: any = {};
 
   constructor(private generativeAiServiceObj: GenerativeAiService) {
-  }
-
-  ngOnInit(): void {
   }
 
   /**
