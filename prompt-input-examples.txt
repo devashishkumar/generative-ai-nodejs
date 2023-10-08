@@ -1,5 +1,6 @@
-A is 30 years old guy working as a Software Developer with 15 lakhs Per Annum Package. He has a home loan of 20 Lakhs. Please suggest how A pay all the loan in 10 years and retire with 10 Crores corpus at the age of 60 years.
+Prompt: A is 30 years old guy working as a Software Developer with 15 lakhs Per Annum Package. He has a home loan of 20 Lakhs. Please suggest how A pay all the loan in 10 years and retire with 10 Crores corpus at the age of 60 years.
 
+Ans:
 1. A should start investing in equity mutual funds and other equity-based investments. He should aim to invest at least 20-30% of his salary every month in these investments. This will help him to build a corpus of 10 crores by the time he retires.
 2. A should also focus on reducing his home loan amount. He should try to make additional payments towards his loan every month. This will help him to reduce the loan amount and also reduce the interest burden.
 3. A should also look at investing in fixed income instruments such as bonds and fixed deposits. These investments will help him to generate a steady income and also help him to build a corpus for retirement.
@@ -7,12 +8,16 @@ A is 30 years old guy working as a Software Developer with 15 lakhs Per Annum Pa
 5. A should also look at diversifying his investments across different asset classes. This will help him to reduce the risk associated with his investments and also help him to generate higher returns.
 By following these steps, A should be able to pay off his loan in 10 years and retire with 10 crores corpus at the age of 60 years.
 
+Prompt:
 What would A do with 10 crores corpus after retirement
 
+Ans:
 A could use the 10 crore corpus to invest in a variety of assets such as stocks, bonds, mutual funds, real estate, and other investments. A could also use the money to start a business, pay off debts, or donate to charity. A could also use the money to travel, purchase a home, or set up a trust fund for their children or grandchildren.
 
+Prompt:
 Any possibilities A could invest 10 crores of corpus in other asset classes
 
+Ans:
 A could invest 10 crores of corpus in other asset classes such as:
 1. Equity: Investing in stocks, mutual funds, and ETFs.
 2. Fixed Income: Investing in bonds, treasury bills, and other debt instruments.
