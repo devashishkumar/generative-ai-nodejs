@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { OpenaiComponent } from './openai/openai.component';
+import { LangchainComponent } from './langchain/langchain.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OpenaiComponent,
+    LangchainComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
