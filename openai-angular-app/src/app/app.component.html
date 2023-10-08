@@ -2,7 +2,7 @@
 
 <div class="container mb-4 mt-5" style="width:700px;">
   <form #formObj="ngForm" [hidden]="loading">
-    <h6>Search Criteria</h6>
+    <h6>Enter Prompt</h6>
     <div class="form-floating">
       <textarea id="searchCriteria" name="searchCriteria" class="form-control" rows="10" cols="10" ngModel></textarea>
     </div>
@@ -26,11 +26,11 @@
 
 <div class="container mt-5" style="width:700px;">
   <form #imageForm="ngForm" [hidden]="imageLoading">
-    <h6>Search Image Criteria</h6>
+    <h6>Image Prompt</h6>
     <div class="form-floating">
       <input type="text" id="image" name="image" class="form-control" placeholder="Define Your Search Criteria" ngModel>
       <label for="image" class="text-success">
-        Search Image Criteria</label>
+        Enter Image Prompt</label>
     </div>
     <div class="form-floating pt-2">
       <input type="submit" value="submit" class="btn btn-primary" (click)="getImage(imageForm.value)">

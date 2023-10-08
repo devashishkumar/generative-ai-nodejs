@@ -22,10 +22,10 @@ OPENAI_API_KEY=your api key
 4. Add Node JS API and Angular UI interface to generate AI Image
 ```
 
-### Open AI Angular Application UI
+### Open AI Text Prompt Search
 
-![openai-prompt-search](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/7bc0c079-de09-496e-93fa-8e7eee4f1622)
+![openai-text-prompt](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/8764bf3f-cf0a-44c8-b439-70a49a899195)
 
-### Genrate Image
+### Open AI Image Prompt Search
 
-![openai-imagegeneration2](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/f71f92e7-9b4c-48b3-9fe8-aa7bc8cc9bc9)
+![openai-imageprompt](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/4d4d6380-d81d-4166-b93e-431f0a0aa553)
