@@ -20,6 +20,7 @@ OPENAI_API_KEY=your api key
 2. Execute command 'npm install' in openai-angular-app directory.
 3. Now Execute command 'ng serve' and access angular app in (http://localhost:4200).
 4. Add Node JS API and Angular UI interface to generate AI Image
+5. Add restaurant idea generator app using langchain
 ```
 
 ### Open AI Text Prompt Search

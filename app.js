@@ -8,6 +8,7 @@ const cors = require("cors");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var openAiRouter = require("./routes/openai");
+var restaurantRouter = require("./routes/restaurant");
 const { displayApiKey, langChainCode, generateText } = require("./openai/openai");
 // console.log(generateText("Sachin Tendulkar"));
 // const openAi = require("./openai/openai2");
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/openai", openAiRouter);
+app.use("/restaurant", restaurantRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
