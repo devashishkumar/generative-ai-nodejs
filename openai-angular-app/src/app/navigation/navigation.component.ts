@@ -9,7 +9,8 @@ import { NavigationStart, Router } from '@angular/router';
 export class NavigationComponent {
   currentRoute = '/';
   navRoutes = [{ route: '/openai', text: 'Open AI', activeClass: ['/', '/openai'] },
-  { route: '/langchain', text: 'Lang Chain', activeClass: ['/langchain'] }];
+  { route: '/langchain', text: 'Lang Chain', activeClass: ['/langchain'] },
+  { route: '/restaurant', text: 'Restaurant Idea Generator', activeClass: ['/restaurant'] }];
   constructor(private router: Router) {
     router.events.subscribe(value => {
       if (value instanceof NavigationStart) {

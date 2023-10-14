@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class GenerativeAiService {
 
   serviceUrl = 'http://localhost:3000/openai/';
+  restaurantUrl = 'http://localhost:3000/restaurant/';
 
   constructor(private httpClientObj: HttpClient) { }
 
@@ -17,7 +18,7 @@ export class GenerativeAiService {
    * @param searchCriteria text
    * @returns 
    */
-  getLangChainDataBySearchCriteria(searchCriteria): Observable<any> {
+  getOpenAiSearchCriteria(searchCriteria): Observable<any> {
     return this.httpClientObj.post(`${this.serviceUrl}getSearchCriteria`, searchCriteria);
   }
 
@@ -28,5 +29,23 @@ export class GenerativeAiService {
    */
   getImage(searchCriteria: string): Observable<any> {
     return this.httpClientObj.get<any>(`${this.serviceUrl}searchImage/${searchCriteria}`);
+  }
+
+  /**
+   * get text
+   * @param searchCriteria text
+   * @returns 
+   */
+  getRestaurantSearchCriteria(searchCriteria): Observable<any> {
+    return this.httpClientObj.post(`${this.restaurantUrl}getSearchCriteria`, searchCriteria);
+  }
+
+  /**
+   * get result based on llm chain
+   * @param searchCriteria text
+   * @returns 
+   */
+  getRestaurantSearchCriteriaLlmChain(searchCriteria): Observable<any> {
+    return this.httpClientObj.post(`${this.restaurantUrl}llmChainGetSearchCriteria`, searchCriteria);
   }
 }

@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { OpenaiComponent } from './openai/openai.component';
 import { LangchainComponent } from './langchain/langchain.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { RestaurantIdeaGeneratorComponent } from './restaurant-idea-generator/restaurant-idea-generator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpenaiComponent,
     LangchainComponent,
-    NavigationComponent
+    NavigationComponent,
+    RestaurantIdeaGeneratorComponent
   ],
   imports: [
     BrowserModule,

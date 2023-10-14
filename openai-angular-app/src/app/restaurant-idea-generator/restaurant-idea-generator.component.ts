@@ -4,17 +4,17 @@ import { Component } from '@angular/core';
 import { GenerativeAiService } from '../services/generative-ai.service';
 
 @Component({
-  selector: 'app-openai',
-  templateUrl: './openai.component.html',
-  styleUrls: ['./openai.component.css']
+  selector: 'app-restaurant-idea-generator',
+  templateUrl: './restaurant-idea-generator.component.html',
+  styleUrls: ['./restaurant-idea-generator.component.css']
 })
-export class OpenaiComponent {
+export class RestaurantIdeaGeneratorComponent {
 
   loading = false;
-  imageLoading = false;
+  llmChainLoading = false;
   formObj: any = {};
   langChainData: any = {};
-  openAiImageData: any = {};
+  llmChainData: any = {};
 
   constructor(private generativeAiServiceObj: GenerativeAiService) {
   }
@@ -33,7 +33,7 @@ export class OpenaiComponent {
    */
   getLangChainData(data) {
     this.loading = true;
-    this.generativeAiServiceObj.getOpenAiSearchCriteria(data).subscribe(response => {
+    this.generativeAiServiceObj.getRestaurantSearchCriteria(data).subscribe(response => {
       this.loading = false;
       this.langChainData = response;
     }, error => {
@@ -45,13 +45,13 @@ export class OpenaiComponent {
    * service call to get data as per user entered data
    * @param data search criteria entered by user
    */
-  getImage(data) {
-    this.imageLoading = true;
-    this.generativeAiServiceObj.getImage(data.image).subscribe(response => {
-      this.imageLoading = false;
-      this.openAiImageData = response;
+  getLlmChainData(data) {
+    this.llmChainLoading = true;
+    this.generativeAiServiceObj.getRestaurantSearchCriteriaLlmChain(data).subscribe(response => {
+      this.llmChainLoading = false;
+      this.llmChainData = response;
     }, error => {
-      this.imageLoading = false;
+      this.llmChainLoading = false;
     });
   }
 
