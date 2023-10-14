@@ -8,17 +8,17 @@ Simple Node JS based Generiative AI App
 1. Create an API Key from Open AI website. Please watch this video. How to get an Open AI API Key ? (https://www.youtube.com/watch?v=nafDyRsVnXU)
 2. Create .env file in the application and add Open AI API Key like this:
 OPENAI_API_KEY=your api key
-3. Execute command in application root 'npm install'.
-4. Install nodemon package in your machine using command 'npm install -g nodemon'.
-5. Execute command 'nodemon start' in your application root location.
+3. Execute command in application root 'npm install'
+4. Install nodemon package in your machine using command 'npm install -g nodemon'
+5. Execute command 'nodemon start' in your application root location
 ```
 
 ### What's New ?
 
 ```sh
-1. Create an Angular app to fetch data through UI.
-2. Execute command 'npm install' in openai-angular-app directory.
-3. Now Execute command 'ng serve' and access angular app in (http://localhost:4200).
+1. Create an Angular app to fetch data through UI
+2. Execute command 'npm install' in openai-angular-app directory
+3. Now Execute command 'ng serve' and access angular app in (http://localhost:4200)
 4. Add Node JS API and Angular UI interface to generate AI Image
 5. Add restaurant idea generator app using langchain
 ```
