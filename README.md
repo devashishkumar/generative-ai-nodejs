@@ -23,10 +23,10 @@ OPENAI_API_KEY=your api key
 5. Add restaurant idea generator app using langchain
 ```
 
-### Open AI Text Prompt Search
+### Open AI Text Search Prompt
 
 ![openai-text-prompt](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/8764bf3f-cf0a-44c8-b439-70a49a899195)
 
-### Open AI Image Prompt Search
+### Open AI Image Search Prompt
 
 ![openai-imageprompt](https://github.com/devashishkumar/generative-ai-nodejs/assets/65059534/4d4d6380-d81d-4166-b93e-431f0a0aa553)
