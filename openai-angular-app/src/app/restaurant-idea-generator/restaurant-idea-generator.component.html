@@ -50,9 +50,10 @@
       </select>
     </form>
 
+    <div class="mt-5"></div>
     <h4>Menu Items</h4>
     <ul>
-      <li *ngFor="let rowData of restaurantData.data.menus.split('\n'); index as i" [hidden]="rowData === ''">
+      <li *ngFor="let rowData of restaurantData.data.menus.split('\n-'); index as i" [hidden]="rowData === ''">
         {{rowData}}
       </li>
     </ul>
