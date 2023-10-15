@@ -1,13 +1,13 @@
-var express = require('express');
+var express = require("express");
 require("dotenv").config();
 var router = express.Router();
 
 /* GET open ai module home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Express" });
 });
 
-router.post('/getSearchCriteria', async function (req, res, next) {
+router.post("/getSearchCriteria", async function (req, res, next) {
   try {
     const classObj = new LangChainRouteModule();
     const restaurantData = await classObj.callMethod(req.body.searchCriteria);
@@ -20,7 +20,7 @@ router.post('/getSearchCriteria', async function (req, res, next) {
   }
 });
 
-router.post('/llmChainGetSearchCriteria', async function (req, res, next) {
+router.post("/llmChainGetSearchCriteria", async function (req, res, next) {
     try {
       const classObj = new LangChainRouteModule();
       const restaurantData = await classObj.llmChainMethod(req.body.llmChainSearchCriteria);
@@ -33,7 +33,7 @@ router.post('/llmChainGetSearchCriteria', async function (req, res, next) {
     }
   });
 
-router.get('/searchImage/:criteria', async function (req, res, next) {
+router.get("/searchImage/:criteria", async function (req, res, next) {
   try {
     // req.params.criteria
   } catch (e) {
@@ -45,7 +45,7 @@ module.exports = router;
 
 const { OpenAI } = require("langchain/llms/openai");
 const {PromptTemplate} = require("langchain/prompts");
-const {LLMChain, SimpleSequentialChain} = require("langchain/chains");
+const {LLMChain, SimpleSequentialChain, SequentialChain} = require("langchain/chains");
 
 require("dotenv").config();
 
@@ -71,7 +71,8 @@ class LangChainRouteModule {
     });
     this.restaurantChain = new LLMChain({
         llm: this.openai,
-        prompt: this.promptTemplate
+        prompt: this.promptTemplate,
+        outputKey: "product"
     });
 
     // food items prompt template
@@ -81,7 +82,8 @@ class LangChainRouteModule {
     });
     this.foodItemsChain = new LLMChain({
         llm: this.openai,
-        prompt: this.menuItemsTemplate
+        prompt: this.menuItemsTemplate,
+        outputKey: "restaurant_name"
     });
     
   }
@@ -111,13 +113,16 @@ class LangChainRouteModule {
    * llm chain method
    */
   async llmChainMethod(text) {
+    // return chain
     // const response = await this.restaurantChain.call({
     //     product: text
     // });
     // console.log(response);
     // return response;
-    const response = new SimpleSequentialChain({verbose: true, chains: [this.restaurantChain, this.foodItemsChain]});
-    const chainResponse = await response.run(text);
+
+    // simple sequential chain
+    const response1 = new SimpleSequentialChain({verbose: true, chains: [this.restaurantChain, this.foodItemsChain]});
+    const chainResponse = await response1.run(text);
     return {text: chainResponse};
   }
 }
