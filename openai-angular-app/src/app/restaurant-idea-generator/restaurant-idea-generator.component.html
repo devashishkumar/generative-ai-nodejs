@@ -51,7 +51,7 @@
     </form>
 
     <div class="mt-5"></div>
-    <h4>Menu Items</h4>
+    <h4 class="text-decoration-underline">Menu Items</h4>
     <ul>
       <li *ngFor="let rowData of restaurantData.data.menus.split('\n-'); index as i" [hidden]="rowData === ''">
         {{rowData}}
