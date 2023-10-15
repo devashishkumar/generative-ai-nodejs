@@ -3,7 +3,6 @@ const { OpenAI } = require("langchain/llms/openai");
 const { PromptTemplate } = require("langchain/prompts");
 require("dotenv").config();
 
-
 class RestaurantChainClass {
     async restaurantChainMethod() {
         try {
@@ -51,8 +50,8 @@ class RestaurantChainClass {
     }
 }
 
-const restaurantChainClassObj = new RestaurantChainClass();
-restaurantChainClassObj.restaurantChainMethod();
+// const restaurantChainClassObj = new RestaurantChainClass();
+// restaurantChainClassObj.restaurantChainMethod();
 
 class LlmSequentialChainClass {
     // This is an LLMChain to write a synopsis given a title of a play and the era it is set in.

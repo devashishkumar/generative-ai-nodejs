@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component } from '@angular/core';
-import { GenerativeAiService } from '../services/generative-ai.service';
+import { Component } from "@angular/core";
+import { GenerativeAiService } from "../services/generative-ai.service";
 
 @Component({
-  selector: 'app-restaurant-idea-generator',
-  templateUrl: './restaurant-idea-generator.component.html',
-  styleUrls: ['./restaurant-idea-generator.component.css']
+  selector: "app-restaurant-idea-generator",
+  templateUrl: "./restaurant-idea-generator.component.html",
+  styleUrls: ["./restaurant-idea-generator.component.css"]
 })
 export class RestaurantIdeaGeneratorComponent {
 
@@ -15,6 +15,9 @@ export class RestaurantIdeaGeneratorComponent {
   formObj: any = {};
   langChainData: any = {};
   llmChainData: any = {};
+  restaurantData: any = {};
+  cuisines = ["Indian", "North Indian", "South Indian", "American", "Italian", "Mexican"];
+  selectedRestaurant = "";
 
   constructor(private generativeAiServiceObj: GenerativeAiService) {
   }
@@ -50,6 +53,32 @@ export class RestaurantIdeaGeneratorComponent {
     this.generativeAiServiceObj.getRestaurantSearchCriteriaLlmChain(data).subscribe(response => {
       this.llmChainLoading = false;
       this.llmChainData = response;
+    }, error => {
+      this.llmChainLoading = false;
+    });
+  }
+
+  /**
+   * service call to get data as per user entered data
+   * @param data search criteria entered by user
+   */
+  getLlmChainSequentialData(data) {
+    this.llmChainLoading = true;
+    this.selectedRestaurant = "";
+    this.generativeAiServiceObj.getChainSequentialData(data).subscribe(response => {
+      this.llmChainLoading = false;
+      this.restaurantData = response;
+      this.restaurantData["restaurants"] = [];
+      if (response && response.data && response.data.restaurantNames) {
+        response.data.restaurantNames.split("\n").forEach((restaurant, dataIndex) => {
+          if (restaurant) {
+            if (!this.selectedRestaurant) {
+              this.selectedRestaurant = restaurant;
+            }
+            this.restaurantData["restaurants"].push(restaurant);
+          }
+        });
+      }
     }, error => {
       this.llmChainLoading = false;
     });

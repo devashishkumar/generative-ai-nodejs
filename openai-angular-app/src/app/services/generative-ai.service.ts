@@ -48,4 +48,13 @@ export class GenerativeAiService {
   getRestaurantSearchCriteriaLlmChain(searchCriteria): Observable<any> {
     return this.httpClientObj.post(`${this.restaurantUrl}llmChainGetSearchCriteria`, searchCriteria);
   }
+
+  /**
+   * get result based on llm chain
+   * @param searchCriteria text
+   * @returns 
+   */
+  getChainSequentialData(searchCriteria): Observable<any> {
+    return this.httpClientObj.post(`${this.restaurantUrl}llmSequentialChain`, searchCriteria);
+  }
 }
