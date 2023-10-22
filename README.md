@@ -21,6 +21,9 @@ OPENAI_API_KEY=your api key
 3. Now Execute command 'ng serve' and access angular app in (http://localhost:4200)
 4. Add Node JS API and Angular UI interface to generate AI Image
 5. Add restaurant idea generator app using langchain
+6. add LangChain agents example
+7. Register for serpapi API Key in (https://serpapi.com/)
+8. Add key with the key name 'SERPAPI_API_KEY' in .env file
 ```
 
 ### Open AI Text Search Prompt

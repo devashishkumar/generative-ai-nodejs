@@ -9,6 +9,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var openAiRouter = require("./routes/openai");
 var restaurantRouter = require("./routes/restaurant");
+var agentRouter = require("./routes/agent");
 const { displayApiKey, langChainCode, generateText } = require("./openai/openai");
 // console.log(generateText("Sachin Tendulkar"));
 // const openAi = require("./openai/openai2");
@@ -35,6 +36,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/openai", openAiRouter);
 app.use("/restaurant", restaurantRouter);
+app.use("/agent", agentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
