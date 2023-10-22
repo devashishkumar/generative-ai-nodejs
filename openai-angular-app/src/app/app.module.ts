@@ -10,6 +10,7 @@ import { OpenaiComponent } from './openai/openai.component';
 import { LangchainComponent } from './langchain/langchain.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RestaurantIdeaGeneratorComponent } from './restaurant-idea-generator/restaurant-idea-generator.component';
+import { AgentComponent } from './agent/agent.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RestaurantIdeaGeneratorComponent } from './restaurant-idea-generator/re
     OpenaiComponent,
     LangchainComponent,
     NavigationComponent,
-    RestaurantIdeaGeneratorComponent
+    RestaurantIdeaGeneratorComponent,
+    AgentComponent
   ],
   imports: [
     BrowserModule,

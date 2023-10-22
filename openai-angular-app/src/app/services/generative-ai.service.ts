@@ -10,6 +10,7 @@ export class GenerativeAiService {
 
   serviceUrl = 'http://localhost:3000/openai/';
   restaurantUrl = 'http://localhost:3000/restaurant/';
+  agentUrl = 'http://localhost:3000/agent/';
 
   constructor(private httpClientObj: HttpClient) { }
 
@@ -56,5 +57,14 @@ export class GenerativeAiService {
    */
   getChainSequentialData(searchCriteria): Observable<any> {
     return this.httpClientObj.post(`${this.restaurantUrl}llmSequentialChain`, searchCriteria);
+  }
+
+  /**
+   * get search image
+   * @param searchCriteria search text
+   * @returns 
+   */
+  getTemperature(value: string): Observable<any> {
+    return this.httpClientObj.post(`${this.agentUrl}getWeather`, { searchCriteria: value });
   }
 }
