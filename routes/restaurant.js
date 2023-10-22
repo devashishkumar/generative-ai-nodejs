@@ -97,8 +97,6 @@ const { OpenAI } = require("langchain/llms/openai");
 const { PromptTemplate } = require("langchain/prompts");
 const { LLMChain, SimpleSequentialChain, SequentialChain } = require("langchain/chains");
 
-require("dotenv").config();
-
 class LangChainRouteModule {
 
   openai;

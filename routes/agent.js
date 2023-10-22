@@ -29,8 +29,6 @@ const { ChatOpenAI } = require("langchain/chat_models/openai");
 const { SerpAPI } = require("langchain/tools");
 const { Calculator } = require("langchain/tools/calculator");
 
-require("dotenv").config();
-
 class Agent {
 
   openai;
